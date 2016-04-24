@@ -37,9 +37,10 @@ class DriverFactory {
             Map<String, Object> chromeOptions = new HashMap<String, Object>();
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
             Map<String, Object> deviceMetrics = new HashMap<String, Object>();
-            deviceMetrics.put("width", 1080);
-            deviceMetrics.put("height", 1920);
+            deviceMetrics.put("width", 1920);
+            deviceMetrics.put("height", 1080);
             deviceMetrics.put("pixelRatio", 3.0);
+            deviceMetrics.put("touch", true);
             mobileEmulation.put("deviceMetrics", deviceMetrics);
 
             chromeOptions.put("mobileEmulation", mobileEmulation);
