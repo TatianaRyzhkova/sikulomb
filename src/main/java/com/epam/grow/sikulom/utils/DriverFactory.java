@@ -1,11 +1,15 @@
 package com.epam.grow.sikulom.utils;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class DriverFactory {
@@ -16,7 +20,7 @@ public class DriverFactory {
     public static final String CHROME = "chrome";
     public static RemoteWebDriver driver;
 
-    public static RemoteWebDriver getWebdriverType() {
+    public static RemoteWebDriver getWebDriverType() {
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream(DRIVER_PROPERTIES_PATH));
@@ -28,7 +32,19 @@ public class DriverFactory {
 
         } else if (properties.getProperty(DRIVER_KEY).equalsIgnoreCase(CHROME) && properties.getProperty(DRIVER_KEY) != null) {
             System.setProperty(CHROME_DRIVER_PATH_KEY, properties.getProperty(CHROME_DRIVER_PATH_KEY));
-            driver = new ChromeDriver();
+            Map<String, Object> mobileEmulation = new HashMap<String, Object>();
+
+            Map<String, Object> chromeOptions = new HashMap<String, Object>();
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            Map<String, Object> deviceMetrics = new HashMap<String, Object>();
+            deviceMetrics.put("width", 1080);
+            deviceMetrics.put("height", 1920);
+            deviceMetrics.put("pixelRatio", 3.0);
+            mobileEmulation.put("deviceMetrics", deviceMetrics);
+
+            chromeOptions.put("mobileEmulation", mobileEmulation);
+            capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+            driver = new ChromeDriver(capabilities);
         }
         return driver;
     }
