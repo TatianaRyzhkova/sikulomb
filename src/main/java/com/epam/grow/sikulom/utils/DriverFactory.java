@@ -12,15 +12,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class DriverFactory {
-    public static final String DRIVER_KEY = "driver";
-    public static final String CHROME_DRIVER_PATH_KEY = "webdriver.chrome.driver";
-    public static final String DRIVER_PROPERTIES_PATH = "src/main/resources/driver.properties";
-    public static final String FIREFOX = "firefox";
-    public static final String CHROME = "chrome";
-    public static RemoteWebDriver driver;
+class DriverFactory {
+    private static final String DRIVER_KEY = "driver";
+    private static final String CHROME_DRIVER_PATH_KEY = "webdriver.chrome.driver";
+    private static final String DRIVER_PROPERTIES_PATH = "src/main/resources/driver.properties";
+    private static final String FIREFOX = "firefox";
+    private static final String CHROME = "chrome";
+    private static RemoteWebDriver driver;
 
-    public static RemoteWebDriver getWebDriverType() {
+    static RemoteWebDriver getWebDriverType() {
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream(DRIVER_PROPERTIES_PATH));
