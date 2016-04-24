@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverManager {
-    private static RemoteWebDriver instance;
+    private static WebDriver instance;
 
     private DriverManager() {
     }
