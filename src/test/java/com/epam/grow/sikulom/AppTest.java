@@ -2,14 +2,12 @@ package com.epam.grow.sikulom;
 
 import com.epam.grow.sikulom.utils.DriverManager;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.html5.LocalStorage;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.ImagePath;
+import org.sikuli.script.Screen;
 
 public class AppTest {
     private WebDriver driver;
@@ -23,13 +21,16 @@ public class AppTest {
     @Test
     public void testApp(){
         driver.get("http://demoqa.com/");
-        WebElement about = driver.findElement(By.xpath("//a[@title='About us']"));
+        Screen screen = new Screen();
+        ImagePath.add("ImageContainer/images");
+        try {
+            screen.wait("src/main/resources/images/about_us.png");
+            screen.click("src/main/resources/images/about_us.png");
+            System.out.println();
+        } catch (FindFailed findFailed) {
+            findFailed.printStackTrace();
+        }
 
-        about.click();
-
-        LocalStorage storage = ((ChromeDriver) driver).getLocalStorage();
-        storage.setItem("tt", "tt");
-        Assert.assertTrue(storage.getItem("tt").equalsIgnoreCase("tt"));
     }
 
     @After

@@ -1,4 +1,4 @@
-package com.epam.grow.sikulom.pages;
+package com.epam.grow.sikulom.pages.webdriver;
 
 import org.openqa.selenium.WebDriver;
 
