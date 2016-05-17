@@ -1,16 +1,18 @@
 package com.epam.grow.sikulom;
 
+import com.epam.grow.sikulom.pages.sikuli.HomePageSikuli;
+import com.epam.grow.sikulom.steps.HomePageSteps;
 import com.epam.grow.sikulom.utils.DriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.sikuli.script.FindFailed;
-import org.sikuli.script.ImagePath;
 import org.sikuli.script.Screen;
 
 public class AppTest {
     private WebDriver driver;
+
+    private HomePageSteps homePageSteps;
 
     @Before
     public void setUp(){
@@ -20,16 +22,13 @@ public class AppTest {
 
     @Test
     public void testApp(){
-        driver.get("http://demoqa.com/");
+        homePageSteps = new HomePageSteps();
+        homePageSteps.openHomePage();
         Screen screen = new Screen();
-        ImagePath.add("ImageContainer/images");
-        try {
-            screen.wait("src/main/resources/images/about_us.png");
-            screen.click("src/main/resources/images/about_us.png");
-            System.out.println();
-        } catch (FindFailed findFailed) {
-            findFailed.printStackTrace();
-        }
+        HomePageSikuli homePageSikuli = new HomePageSikuli(screen);
+        homePageSikuli.clickAbout();
+
+        System.out.println();
 
     }
 

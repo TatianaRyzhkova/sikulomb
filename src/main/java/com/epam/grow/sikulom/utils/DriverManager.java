@@ -12,9 +12,7 @@ public class DriverManager {
     public static WebDriver getDriver() {
         if (instance == null) {
             instance = DriverFactory.getWebDriverType();
-        } else
-            throw new WebDriverException("No driver initiated");
-        //// TODO: 18.04.16 add logger 
+        }
         return instance;
     }
 
