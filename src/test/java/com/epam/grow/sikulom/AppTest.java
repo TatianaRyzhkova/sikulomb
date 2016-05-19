@@ -12,14 +12,13 @@ import org.openqa.selenium.WebDriver;
 import org.sikuli.script.Screen;
 
 public class AppTest {
-    private WebDriver driver;
 
     private HomePageSteps homePageSteps;
     private AboutUsPageSteps aboutUsPageSteps;
 
     @Before
     public void setUp() {
-        driver = DriverManager.getDriver();
+        WebDriver driver = DriverManager.getDriver();
         driver.manage().window().maximize();
     }
 

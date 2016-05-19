@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends PageObject {
 
-
     private static final String DEFAULT_URL = "http://demoqa.com/";
 
     public HomePage(WebDriver driver) {

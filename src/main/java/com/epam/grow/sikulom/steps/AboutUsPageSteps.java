@@ -10,7 +10,7 @@ public class AboutUsPageSteps {
         this.aboutUsPage = new AboutUsPage(DriverManager.getDriver());
     }
 
-    public boolean isAboutUsTitlePresent(){
-       return aboutUsPage.isAboutUsTitleDisplayed();
+    public boolean isAboutUsTitlePresent() {
+        return aboutUsPage.isAboutUsTitleDisplayed();
     }
 }

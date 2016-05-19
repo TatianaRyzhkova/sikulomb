@@ -2,10 +2,10 @@ package com.epam.grow.sikulom.pages.sikuli;
 
 import org.sikuli.script.Screen;
 
-public class SikuliAbstractPage {
-    protected Screen screen;
+class SikuliAbstractPage {
+    Screen screen;
 
-    protected SikuliAbstractPage(Screen screen){
+    SikuliAbstractPage(Screen screen) {
         this.screen = screen;
     }
 
