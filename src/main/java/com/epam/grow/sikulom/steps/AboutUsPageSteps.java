@@ -5,7 +5,6 @@ import com.epam.grow.sikulom.utils.DriverManager;
 
 public class AboutUsPageSteps {
     private AboutUsPage aboutUsPage;
-
     public AboutUsPageSteps() {
         this.aboutUsPage = new AboutUsPage(DriverManager.getDriver());
     }

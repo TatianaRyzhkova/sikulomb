@@ -1,5 +1,6 @@
 package com.epam.grow.sikulom;
 
+import com.epam.grow.sikulom.pages.sikuli.AboutUsPageSikuli;
 import com.epam.grow.sikulom.pages.sikuli.HomePageSikuli;
 import com.epam.grow.sikulom.steps.AboutUsPageSteps;
 import com.epam.grow.sikulom.steps.HomePageSteps;
@@ -34,6 +35,8 @@ public class AppTest {
         // 3. Verify presence of About Us title
         aboutUsPageSteps = new AboutUsPageSteps();
         Assert.assertTrue("About us title is not present", aboutUsPageSteps.isAboutUsTitlePresent());
+        AboutUsPageSikuli aboutUsPageSikuli = new AboutUsPageSikuli(screen);
+        Assert.assertTrue("Title is not present", aboutUsPageSikuli.isTitlePresent());
     }
 
     @After
