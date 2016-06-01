@@ -13,8 +13,6 @@ import static com.epam.grow.sikulom.utils.PropertyController.WEBDRIVER_IMPLICITL
 
 @Log4j
 class DriverFactory {
-
-
     private static final String FIREFOX = "firefox";
     private static final String CHROME = "chrome";
     private static RemoteWebDriver driver;

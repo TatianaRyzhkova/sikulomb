@@ -23,7 +23,7 @@ public class PropertyController {
         return properties.getProperty(key);
     }
 
-    public static Properties readProperties() {
+    private static Properties readProperties() {
         Properties props = new Properties();
         try {
             InputStream inputStream = Files.newInputStream(Paths.get(DRIVER_PROPERTIES_PATH));
