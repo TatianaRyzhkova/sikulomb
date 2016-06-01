@@ -15,9 +15,6 @@ import org.openqa.selenium.WebDriver;
 
 public class AppTest {
 
-    private HomePageSteps homePageSteps;
-    private AboutUsPageSteps aboutUsPageSteps;
-
     @Before
     public void setUp() {
         WebDriver driver = DriverManager.getDriver();
@@ -27,13 +24,13 @@ public class AppTest {
     @Test
     public void testApp() {
         // 1. Open home page
-        homePageSteps = new HomePageSteps();
+        HomePageSteps homePageSteps = new HomePageSteps();
         homePageSteps.openHomePage();
         // 2. Press about button with sikuli
         HomePageSikuliSteps homePageSikuliSteps = new HomePageSikuliSteps();
         homePageSikuliSteps.openAbout();
         // 3. Verify presence of About Us title
-        aboutUsPageSteps = new AboutUsPageSteps();
+        AboutUsPageSteps aboutUsPageSteps = new AboutUsPageSteps();
         Assert.assertTrue("About us title is not present", aboutUsPageSteps.isAboutUsTitlePresent());
         AboutUsPageSikuliSteps aboutUsPageSikuliSteps = new AboutUsPageSikuliSteps();
         Assert.assertTrue("Title is not present", aboutUsPageSikuliSteps.isAboutUsTitlePresent());
