@@ -3,7 +3,7 @@ package com.epam.grow.sikulom.pages.sikuli;
 import org.sikuli.script.Screen;
 
 public class AboutUsPageSikuli extends SikuliAbstractPage {
-    private static final String ABOUT_TITLE = PATH + "about_us_title.png";
+    private static final String ABOUT_TITLE = IMAGES_PATH + "about_us_title.png";
 
     public AboutUsPageSikuli(Screen screen) {
         super(screen);

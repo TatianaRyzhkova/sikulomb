@@ -15,7 +15,7 @@ public class AboutUsPage extends PageObject {
         driver.get(DEFAULT_URL);
     }
 
-    public boolean isAboutUsTitleDisplayed(){
+    public boolean isAboutUsTitleDisplayed() {
         return driver.findElement(By.xpath(ABOUT_US_H1)).isDisplayed();
     }
 }

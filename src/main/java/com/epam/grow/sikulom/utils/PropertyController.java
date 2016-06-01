@@ -11,7 +11,7 @@ public class PropertyController {
     public static final String WEBDRIVER_IMPLICITLY_WAIT = "webdriver.implicitly.wait";
     public static final String DRIVER_KEY = "driver";
     public static final String CHROME_DRIVER_PATH_KEY = "webdriver.chrome.driver";
-    static Properties properties;
+    private static Properties properties;
 
     private PropertyController() {
     }

@@ -1,4 +1,4 @@
-package com.epam.grow.sikulom.steps;
+package com.epam.grow.sikulom.steps.webdriver;
 
 
 import com.epam.grow.sikulom.pages.webdriver.HomePage;

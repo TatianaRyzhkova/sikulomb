@@ -5,7 +5,7 @@ import org.sikuli.script.Screen;
 
 public class HomePageSikuli extends SikuliAbstractPage {
 
-    private static final String ABOUT = PATH + "about_us.png";
+    private static final String ABOUT = IMAGES_PATH + "about_us.png";
 
     public HomePageSikuli(Screen screen) {
         super(screen);
